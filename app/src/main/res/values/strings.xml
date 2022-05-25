@@ -7,4 +7,5 @@
 
     // activity_second.xml
     <string name="weather_data_title">Weer</string>
+    <string name="local_earthquake_data">Aardbevingen (KNMI)</string>
 </resources>

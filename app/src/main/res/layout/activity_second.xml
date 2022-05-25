@@ -23,7 +23,7 @@
             android:id="@+id/weatherDataTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="serif"
             android:text="@string/weather_data_title"
             android:textColor="@color/white"
@@ -35,18 +35,18 @@
             card_view:cardCornerRadius="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/weatherDataTitle"
+            app:layout_constraintTop_toBottomOf="@id/weatherDataTitle"
             app:cardBackgroundColor="@color/dark_grey"
             android:id="@+id/card_view_top"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="75dp" >
+            android:layout_marginTop="25dp" >
 
             <TextView
                 android:id="@+id/country_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/white"
                 android:textSize="50px" />
@@ -56,14 +56,14 @@
                 android:id="@+id/image_view"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginLeft="20dp" />
 
             <TextView
                 android:id="@+id/country_temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginLeft="80dp"
                 android:textColor="@color/white"
                 android:textSize="100px" />
@@ -73,7 +73,7 @@
                 android:layout_gravity="right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginRight="20dp"
                 android:gravity="right"
@@ -82,12 +82,13 @@
 
             <TextView
                 android:id="@+id/country_temperature_range"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_marginTop="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:text="10/01"
                 android:textColor="@color/grey_text"
-                android:textSize="50px" />
+                android:textSize="30px" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -98,7 +99,7 @@
             app:layout_constraintTop_toBottomOf="@id/card_view_top"
             android:id="@+id/card_view_mid"
             android:layout_width="350dp"
-            android:layout_height="600dp"
+            android:layout_height="400dp"
             android:layout_marginTop="10dp" >
 
             <WebView
@@ -108,21 +109,17 @@
                 android:scrollbars="vertical" />
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            card_view:cardCornerRadius="4dp"
+        <TextView
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_view_mid"
-            android:id="@+id/card_view_bottom"
-            android:layout_width="350dp"
-            android:layout_height="400dp"
-            android:layout_marginTop="10dp">
-
-            <WebView
-                android:id="@+id/local_earthquake_data"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </androidx.cardview.widget.CardView>
+            android:id="@+id/local_earthquake_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/local_earthquake_data"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textSize="30px" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

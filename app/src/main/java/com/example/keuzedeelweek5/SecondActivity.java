@@ -2,25 +2,13 @@ package com.example.keuzedeelweek5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.webkit.WebSettings;
+import android.text.method.LinkMovementMethod;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Vector;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -54,11 +42,18 @@ public class SecondActivity extends AppCompatActivity {
         WebView globalEarthquakeData;
         globalEarthquakeData = (WebView) findViewById(R.id.global_earthquake_data);
         globalEarthquakeData.getSettings().setJavaScriptEnabled(true);
-        globalEarthquakeData.loadUrl("https://earthquake.usgs.gov/earthquakes/map/?extent=55.20709,-138.97224&extent=55.54961,-137.9615");
+        globalEarthquakeData.loadUrl(
+                "https://earthquake.usgs.gov/earthquakes/map/?extent=55.20709,-138.97224&extent=55.54961,-137.9615"
+        );
 
-        WebView localEarthquakeData;
-        localEarthquakeData = (WebView) findViewById(R.id.local_earthquake_data);
-        localEarthquakeData.getSettings().setJavaScriptEnabled(true);
-        localEarthquakeData.loadUrl("https://json-feed-viewer.herokuapp.com/feed?url=https%3A%2F%2Fcdn.knmi.nl%2Fknmi%2Fmap%2Fpage%2Fseismologie%2FGQuake_KNMI_RSS.xml");
+        TextView localEarthquakeData = findViewById(R.id.local_earthquake_data);
+        localEarthquakeData.setMovementMethod(LinkMovementMethod.getInstance());
+        localEarthquakeData.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+            browserIntent.setData(Uri.parse(
+                    "https://json-feed-viewer.herokuapp.com/feed?url=https%3A%2F%2Fcdn.knmi.nl%2Fknmi%2Fmap%2Fpage%2Fseismologie%2FGQuake_KNMI_RSS.xml"
+            ));
+            startActivity(browserIntent);
+        });
     }
 }
