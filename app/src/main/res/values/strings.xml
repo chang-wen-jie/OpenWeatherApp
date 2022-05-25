@@ -1,0 +1,10 @@
+<resources>
+
+    // activity_main.xml
+    <string name="app_name">Deltion College Weerstatistieken</string>
+    <string name="weather_data_query">Land of gemeente</string>
+    <string name="get_weather_data_text">haal weerdata op</string>
+
+    // activity_second.xml
+    <string name="weather_data_title">Weer</string>
+</resources>
