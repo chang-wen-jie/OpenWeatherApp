@@ -1,3 +1,5 @@
-# OpenWeatherMap
+## Weer App
+Een simpele mobiele applicatie die weerstatistieken weergeeft van een bepaalde locatie m.b.v. OpenWeatherMap.
 
-simpele weerstatistieken applicatie met de openweathermap api
+## Benodigdheden
+- Android Studio (of iets dergelijks)
